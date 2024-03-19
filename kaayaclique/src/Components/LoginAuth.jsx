@@ -2,7 +2,7 @@ import React from "react";
 
 const LoginAuth = () => {
     const loginWithGoogle = () => {
-       window.open("http://localhost:8000/auth/google/callback", "_self");
+       window.open("https://kaaya-clique-server.vercel.app/auth/google/callback", "_self");
     }
     return (
         <div className="flex flex-col justify-center border-blue-200 rounded-sm">

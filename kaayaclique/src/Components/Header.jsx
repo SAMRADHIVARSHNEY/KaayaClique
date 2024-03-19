@@ -14,7 +14,7 @@ const Header = () => {
     }
     const getUserData = async () => {
         try{
-            const response = await axios.get("http://localhost:8000/login/sucess", { withCredentials: true, headers: headers });
+            const response = await axios.get("https://kaaya-clique-server.vercel.app/login/sucess", { withCredentials: true, headers: headers });
             console.log("response data user", response);
             setUserdata(response.data.user);
         } catch(err){
@@ -24,7 +24,7 @@ const Header = () => {
 
     // logoout
     const logout = ()=>{
-        window.open("http://localhost:8000/logout","_self")
+        window.open("https://kaaya-clique-server.vercel.app/logout","_self")
     }
 
     useEffect(() => {

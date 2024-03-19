@@ -19,7 +19,7 @@ const clientsecret = process.env.GOOGLE_CLIENT_SECRET;
 // const port = process.env.project_env. ;
 app.use(cors(
     {
-        origin: 'http://localhost:3000',
+        origin: 'https://kaayaclique.vercel.app/',
         methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
         credentials: true
     }
@@ -76,8 +76,8 @@ passport.deserializeUser((user, done) => {
 
 app.get("/auth/google", passport.authenticate("google", { scope: ["profile", "email"] }));
 app.get("/auth/google/callback", passport.authenticate("google",{
-    successRedirect: "http://localhost:3000/dashboard",
-    failureRedirect: "http://localhost:3000/login",
+    successRedirect: "https://kaayaclique.vercel.app//dashboard",
+    failureRedirect: "https://kaayaclique.vercel.app/login",
 }));
 
 app.get("/login/sucess",async(req,res)=>{
@@ -92,7 +92,7 @@ app.get("/login/sucess",async(req,res)=>{
 app.get("/logout",(req,res,next)=>{
     req.logout(function(err){
         if(err){return next(err)}
-        res.redirect("http://localhost:3000");
+        res.redirect("https://kaayaclique.vercel.app/");
     })
 })
 app.listen(port, () => {
